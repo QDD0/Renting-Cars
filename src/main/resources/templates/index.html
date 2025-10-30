@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script th:src="@{/js/scripts.js}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<header>
+    <div class="slider">
+        <img
+                src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/homepage/26my-azure/GTC%20Azure%20Desktop%20Dynamic.jpg/_jcr_content/renditions/original.image_file.1920.960.file/GTC%20Azure%20Desktop%20Dynamic.jpg"
+                class="slide active"
+        />
+        <img
+                src="https://emea-dam.audi.com/adobe/assets/urn:aaid:aem:b4722408-47d7-497b-a2fa-269a14e3dd13/as/1920x1080_A243172_large.jpg?width=1920"
+                class="slide"
+        />
+        <img
+                src="https://assets.volkswagen.com/is/image/volkswagenag/VW_NGW6_Showroom_Masthead_MY26Jetta_Desktop?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmaGVpPTEwODAmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmM2E1Nw=="
+                class="slide"
+        />
+        <img
+                src="https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/corolla/mlp/welcome-mat/COR_MY23_0019_V001_desktop.png?fmt=jpeg&fit=crop&wid=1919"
+                class="slide"
+        />
+    </div>
+    <ul class="menu-bar">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">Каталог</a></li>
+        <li><a href="contact.html">Корзина</a></li>
+        <li><a href="login.html">ХЗ</a></li>
+        <li><a href="login.html">Профиль</a></li>
+    </ul>
+</header>
+
+<section class="review-cars">
+    <h1 class="review">Обозор по категориям</h1>
+    <div class="cars-type">
+        <a href="#" class="category-link sport">
+            <img th:src="@{/img/sport.png}" class="cars-img" />
+            Спортивные
+        </a>
+        <a href="#" class="category-link lux">
+            <img th:src="@{/img/lux.png}" class="cars-img" />Примиум-класс</a
+        >
+        <a href="#" class="category-link standart">
+            <img th:src="@{/img/standart.png}" class="cars-img" />Легковые</a
+        >
+        <a href="#" class="category-link offroad">
+            <img th:src="@{/img/offroad.png}" class="cars-img" />Внедорожники</a
+        >
+        <a href="#" class="category-link electric">
+            <img th:src="@{/img/electric.png}" class="cars-img" />Электромобили</a
+        >
+        <a href="#" class="category-link cabrio">
+            <img th:src="@{/img/cabrio.png}" class="cars-img" />Кабриолеты</a
+        >
+    </div>
+</section>
+
+<section class="popular-cars">
+    <h1 class="special">Специальные предложения</h1>
+</section>
+
+<section class="visit-cart">
+    <h1 class="visit-cart-text">Почему выбирают нас?</h1>
+
+    <div class="choose">
+        <div class="choose-item">
+            <img th:src="@{/img/f1.svg.png}" alt="Финансирование" />
+            <h3 class="choose-text">Специальные предложения</h3>
+            <p class="mini-info">Наш финансовый отдел, который может работать</p>
+            <p class="mini-info">
+                найти финансовые решения, которые помогут вам сэкономить
+            </p>
+        </div>
+
+        <div class="choose-item">
+            <img th:src="@{/img/f2.svg.png}" alt="Доверие" />
+            <h3 class="choose-text">Надежный автосалон</h3>
+            <p class="mini-info">Our stress-free finance department that can</p>
+            <p class="mini-info">find financial solutions to save you money</p>
+        </div>
+
+        <div class="choose-item">
+            <img th:src="@{/img/f3.svg.png}" alt="Обслуживание" />
+            <h3 class="choose-text">Прозрачное ценообразование</h3>
+            <p class="mini-info">Our stress-free finance department that can</p>
+            <p class="mini-info">find financial solutions to save you money</p>
+        </div>
+
+        <div class="choose-item">
+            <img th:src="@{/img/f4.svg.png}" alt="Гарантия" />
+            <h3 class="choose-text">Экспертный автосервис</h3>
+            <p class="mini-info">Our stress-free finance department that can</p>
+            <p class="mini-info">find financial solutions to save you money</p>
+        </div>
+    </div>
+</section>
+
+<footer class="about">
+    <div class="footer-content">
+        <div class="newsletter-section">
+            <h2>Join CarHut</h2>
+            <p>Receive pricing updates, shopping tips & more!</p>
+            <div class="email-input">
+                <input type="email" placeholder="Your email address" />
+                <button class="registr">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Services</a>
+                <a href="#">FACs</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Get in Touch</a>
+                <a href="#">Help center</a>
+                <a href="#">Live chat</a>
+                <a href="#">How it works</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Brands</h3>
+                <a href="#">Toyota</a>
+                <a href="#">Porsche</a>
+                <a href="#">Audi</a>
+                <a href="#">BMW</a>
+                <a href="#">Ford</a>
+                <a href="#">Nissan</a>
+                <a href="#">Peargett</a>
+                <a href="#">Volkswagen</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Vehicles Type</h3>
+                <a href="#">Sedan</a>
+                <a href="#">Hatchback</a>
+                <a href="#">SUV</a>
+                <a href="#">Hybrid</a>
+                <a href="#">Electric</a>
+                <a href="#">Coupe</a>
+                <a href="#">Convertible</a>
+                <a href="#">Truck</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Mobile App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-store">
+                        <span>Download on the</span>
+                        <strong>Apple Store</strong>
+                    </a>
+                    <a href="#" class="google-play">
+                        <span>Get in on</span>
+                        <strong>Google Play</strong>
+                    </a>
+                </div>
+                <div class="social-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/feed">VK</a>
+                        <a href="https://x.com/">X</a>
+                        <a href="https://web.telegram.org/k/">TG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
