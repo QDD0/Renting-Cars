@@ -29,9 +29,8 @@
             <ul class="menu-bar glass-menu">
                 <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
                 <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
                 <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a th:href="@{/upload}"><i class="fas fa-user"></i> Админ</a></li>
             </ul>
         </div>
     </nav>
@@ -40,9 +39,8 @@
         <ul class="mobile-menu">
             <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
             <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
-            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
             <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
-            <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
+            <li><a th:href="@{/upload}"><i class="fas fa-user"></i> Админ</a></li>
         </ul>
     </div>
 
@@ -256,7 +254,7 @@
             <p>Получайте обновления цен, советы по выбору и многое другое!</p>
             <div class="email-input">
                 <input type="email" placeholder="Ваш email адрес"/>
-                <button class="subscribe-btn">Подписаться</button>
+                <button class="subscribe-btn" th:href="@{/catalog}" >Отправить</button>
             </div>
         </div>
 
