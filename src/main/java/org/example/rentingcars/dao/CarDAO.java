@@ -23,9 +23,9 @@ public class CarDAO {
     }
 
     public List<Car> getMainInfo() {
-        return jdbcTemplate.query("SELECT id_car, mark, model, price, file_main_view FROM cars", (rs, rowNum) -> {
+        return jdbcTemplate.query("SELECT city, mark, model, price, file_main_view FROM cars", (rs, rowNum) -> {
             Car car = new Car();
-            car.setId_car(rs.getInt("id_car"));
+            car.setCity(rs.getString("city"));
             car.setMark(rs.getString("mark"));
             car.setModel(rs.getString("model"));
             car.setPrice(rs.getDouble("price"));

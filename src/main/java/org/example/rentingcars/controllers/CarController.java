@@ -24,11 +24,11 @@ public class CarController {
     @Autowired
     private CarDAO carDAO;
 
-    @GetMapping("/")
+    @GetMapping("/catalog")
     public String index(Model model) {
         List<Car> cars = carDAO.getMainInfo();
         model.addAttribute("cars", cars);
-        return "gallery";
+        return "catalog";
     }
 
     @GetMapping("/upload")

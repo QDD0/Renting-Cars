@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CarHut - Прокат автомобилей</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script th:src="@{/js/scripts.js}" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
 <header>
@@ -26,49 +27,53 @@
             </button>
 
             <ul class="menu-bar glass-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
-                <li><a href="catalog.html"><i class="fas fa-car"></i> Каталог</a></li>
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
                 <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a href="profile.html"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
+                <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="mobile-menu-container">
         <ul class="mobile-menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
-            <li><a href="catalog.html"><i class="fas fa-car"></i> Каталог</a></li>
+            <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> О нас</a></li>
-            <li><a href="profile.html"><i class="fas fa-user"></i> Профиль</a></li>
+            <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
+            <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
         </ul>
     </div>
 
     <div class="slider">
         <div class="slide active">
-            <img src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/homepage/26my-azure/GTC%20Azure%20Desktop%20Dynamic.jpg/_jcr_content/renditions/original.image_file.1920.960.file/GTC%20Azure%20Desktop%20Dynamic.jpg" alt="Bentley Azure" />
+            <img src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/homepage/26my-azure/GTC%20Azure%20Desktop%20Dynamic.jpg/_jcr_content/renditions/original.image_file.1920.960.file/GTC%20Azure%20Desktop%20Dynamic.jpg"
+                 alt="Bentley Azure"/>
             <div class="slide-content">
                 <h2>Люкс автомобили</h2>
                 <p>Эксклюзивные автомобили премиум-класса</p>
             </div>
         </div>
         <div class="slide">
-            <img src="https://emea-dam.audi.com/adobe/assets/urn:aaid:aem:b4722408-47d7-497b-a2fa-269a14e3dd13/as/1920x1080_A243172_large.jpg?width=1920" alt="Audi" />
+            <img src="https://emea-dam.audi.com/adobe/assets/urn:aaid:aem:b4722408-47d7-497b-a2fa-269a14e3dd13/as/1920x1080_A243172_large.jpg?width=1920"
+                 alt="Audi"/>
             <div class="slide-content">
                 <h2>Современный дизайн</h2>
                 <p>Инновации и технологии в каждом автомобиле</p>
             </div>
         </div>
         <div class="slide">
-            <img src="https://assets.volkswagen.com/is/image/volkswagenag/VW_NGW6_Showroom_Masthead_MY26Jetta_Desktop?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmaGVpPTEwODAmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmM2E1Nw==" alt="Volkswagen Jetta" />
+            <img src="https://assets.volkswagen.com/is/image/volkswagenag/VW_NGW6_Showroom_Masthead_MY26Jetta_Desktop?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmaGVpPTEwODAmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmM2E1Nw=="
+                 alt="Volkswagen Jetta"/>
             <div class="slide-content">
                 <h2>Доступные цены</h2>
                 <p>Качественные автомобили для каждого</p>
             </div>
         </div>
         <div class="slide">
-            <img src="https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/corolla/mlp/welcome-mat/COR_MY23_0019_V001_desktop.png?fmt=jpeg&fit=crop&wid=1919" alt="Toyota Corolla" />
+            <img src="https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/corolla/mlp/welcome-mat/COR_MY23_0019_V001_desktop.png?fmt=jpeg&fit=crop&wid=1919"
+                 alt="Toyota Corolla"/>
             <div class="slide-content">
                 <h2>Надежность</h2>
                 <p>Проверенные временем автомобили</p>
@@ -96,27 +101,27 @@
         <h2 class="section-title">Обзор по категориям</h2>
         <div class="cars-type">
             <a href="#" class="category-link sport">
-                <img th:src="@{/img/sport.png}" class="cars-img" alt="Спортивные автомобили" />
+                <img th:src="@{/img/sport.png}" class="cars-img" alt="Спортивные автомобили"/>
                 <span>Спортивные</span>
             </a>
             <a href="#" class="category-link lux">
-                <img th:src="@{/img/lux.png}" class="cars-img" alt="Премиум-класс" />
+                <img th:src="@{/img/lux.png}" class="cars-img" alt="Премиум-класс"/>
                 <span>Премиум-класс</span>
             </a>
             <a href="#" class="category-link standart">
-                <img th:src="@{/img/standart.png}" class="cars-img" alt="Легковые автомобили" />
+                <img th:src="@{/img/standart.png}" class="cars-img" alt="Легковые автомобили"/>
                 <span>Легковые</span>
             </a>
             <a href="#" class="category-link offroad">
-                <img th:src="@{/img/offroad.png}" class="cars-img" alt="Внедорожники" />
+                <img th:src="@{/img/offroad.png}" class="cars-img" alt="Внедорожники"/>
                 <span>Внедорожники</span>
             </a>
             <a href="#" class="category-link electric">
-                <img th:src="@{/img/electric.png}" class="cars-img" alt="Электромобили" />
+                <img th:src="@{/img/electric.png}" class="cars-img" alt="Электромобили"/>
                 <span>Электромобили</span>
             </a>
             <a href="#" class="category-link cabrio">
-                <img th:src="@{/img/cabrio.png}" class="cars-img" alt="Кабриолеты" />
+                <img th:src="@{/img/cabrio.png}" class="cars-img" alt="Кабриолеты"/>
                 <span>Кабриолеты</span>
             </a>
         </div>
@@ -127,7 +132,8 @@
         <div class="offers-grid">
             <div class="offer-card">
                 <div class="offer-badge">-20%</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2025/01/0P1A9445-1024x683.jpg" alt="Аренда на неделю" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2025/01/0P1A9445-1024x683.jpg"
+                     alt="Аренда на неделю"/>
                 <div class="offer-content">
                     <h3>Аренда на неделю</h3>
                     <p>Скидка 20% при аренде от 7 дней</p>
@@ -137,7 +143,8 @@
 
             <div class="offer-card">
                 <div class="offer-badge">Акция</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2025/03/0P1A3358-1024x683.jpg" alt="Бесплатная страховка" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2025/03/0P1A3358-1024x683.jpg"
+                     alt="Бесплатная страховка"/>
                 <div class="offer-content">
                     <h3>Бесплатная страховка</h3>
                     <p>Полная страховка в подарок при аренде</p>
@@ -147,7 +154,7 @@
 
             <div class="offer-card">
                 <div class="offer-badge">Новинка</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2024/08/1200x900n-9-1-1024x768.webp" alt="Спорт" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2024/08/1200x900n-9-1-1024x768.webp" alt="Спорт"/>
                 <div class="offer-content">
                     <h3>Быстрый старт</h3>
                     <p>Для тех, кто любит скорость</p>
@@ -157,7 +164,8 @@
 
             <div class="offer-card">
                 <div class="offer-badge">-35%</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2025/01/0P1A9216-1024x683.jpg" alt="Аренда на неделю" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2025/01/0P1A9216-1024x683.jpg"
+                     alt="Аренда на неделю"/>
                 <div class="offer-content">
                     <h3>Аренда на неделю</h3>
                     <p>Скидка 35% при аренде от 10 дней</p>
@@ -167,7 +175,7 @@
 
             <div class="offer-card">
                 <div class="offer-badge">Новинка</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2024/04/0P1A5955-1024x683.jpg" alt="Электромобили" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2024/04/0P1A5955-1024x683.jpg" alt="Электромобили"/>
                 <div class="offer-content">
                     <h3>ЭкоАренда</h3>
                     <p>Специальные цены на электромобили</p>
@@ -177,7 +185,8 @@
 
             <div class="offer-card">
                 <div class="offer-badge">-10%</div>
-                <img src="https://prokatcom.ru/wp-content/uploads/2023/05/0P1A8778-1024x683.jpg" alt="Аренда на неделю" />
+                <img src="https://prokatcom.ru/wp-content/uploads/2023/05/0P1A8778-1024x683.jpg"
+                     alt="Аренда на неделю"/>
                 <div class="offer-content">
                     <h3>Классика</h3>
                     <p>Для повседневных дел</p>
@@ -229,12 +238,12 @@
             <div class="cta-card">
                 <h3>Ищете автомобиль?</h3>
                 <p>Мы предлагаем лучшие условия аренды и продажи автомобилей</p>
-                <a href="catalog.html" class="cta-btn">Выбрать автомобиль</a>
+                <a th:href="@{/catalog}" class="cta-btn">Выбрать автомобиль</a>
             </div>
             <div class="cta-card">
                 <h3>Хотите продать автомобиль?</h3>
                 <p>Выгодные условия выкупа и комиссионной продажи</p>
-                <a href="sell.html" class="cta-btn">Продать автомобиль</a>
+                <a th:href="@{/catalog}" class="cta-btn">Продать автомобиль</a>
             </div>
         </div>
     </section>
@@ -246,7 +255,7 @@
             <h2>Присоединяйтесь к CarHut</h2>
             <p>Получайте обновления цен, советы по выбору и многое другое!</p>
             <div class="email-input">
-                <input type="email" placeholder="Ваш email адрес" />
+                <input type="email" placeholder="Ваш email адрес"/>
                 <button class="subscribe-btn">Подписаться</button>
             </div>
         </div>

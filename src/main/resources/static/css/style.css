@@ -401,7 +401,7 @@ body {
 .cabrio { background-color: #fce4ec; }
 .cabrio:hover { background-color: #ff7bb5; color: white; }
 
-/* Специальные предложения */
+
 .offers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
