@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -96,5 +97,24 @@ public class CarController {
         Files.write(filePath, file.getBytes());
 
         return uniqueFilename;
+    }
+
+    @GetMapping("/catalog/{id}")
+    public String show(@PathVariable("id") int id, Model model) {
+        Car car = carDAO.showById(id);
+
+        if (car != null) {
+            System.out.println("Найден автомобиль: " + car.getMark() + " " + car.getModel());
+            System.out.println("file_main_view: " + car.getFile_main_view());
+            System.out.println("file_back_view: " + car.getFile_back_view());
+            System.out.println("file_left_view: " + car.getFile_left_view());
+            System.out.println("file_into_view: " + car.getFile_into_view());
+
+            model.addAttribute("car", car);
+            return "carId";
+        } else {
+            System.out.println("Автомобиль с id=" + id + " не найден");
+            return "redirect:/catalog";
+        }
     }
 }

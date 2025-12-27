@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>CarHut</h1>
+            </div>
+
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="menu-bar glass-menu">
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
+                <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
+                <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-container">
+        <ul class="mobile-menu">
+            <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
+            <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
+            <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
+        </ul>
+    </div>
+</header>
+
+<footer class="footer">
+    <div class="footer-content container">
+        <div class="newsletter-section">
+            <h2>Присоединяйтесь к CarHut</h2>
+            <p>Получайте обновления цен, советы по выбору и многое другое!</p>
+            <div class="email-input">
+                <input type="email" placeholder="Ваш email адрес"/>
+                <button class="subscribe-btn">Подписаться</button>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Компания</h3>
+                <a href="about.html">О нас</a>
+                <a href="blog.html">Блог</a>
+                <a href="services.html">Услуги</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Быстрые ссылки</h3>
+                <a href="contact.html">Связаться с нами</a>
+                <a href="help.html">Центр помощи</a>
+                <a href="chat.html">Онлайн-чат</a>
+                <a href="how-it-works.html">Как это работает</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Наши бренды</h3>
+                <div class="brands-grid">
+                    <a href="#">Toyota</a>
+                    <a href="#">Porsche</a>
+                    <a href="#">Audi</a>
+                    <a href="#">BMW</a>
+                    <a href="#">Ford</a>
+                    <a href="#">Nissan</a>
+                    <a href="#">Mercedes</a>
+                    <a href="#">Volkswagen</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Мобильное приложение</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-store">
+                        <i class="fab fa-apple"></i>
+                        <div>
+                            <span>Загрузите в</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="google-play">
+                        <i class="fab fa-google-play"></i>
+                        <div>
+                            <span>Доступно в</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://vk.com" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                <a href="https://telegram.org" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">© 2024 CarHut. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

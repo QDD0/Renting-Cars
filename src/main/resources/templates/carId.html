@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarHut - Каталог автомобилей</title>
+    <title th:text="${car.mark + ' ' + car.model}">CarHut - Детали автомобиля</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" th:href="@{/css/catalogStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/showCar.css}" />
     <script th:src="@{/js/scripts.js}" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-          rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
 <header>
@@ -44,100 +39,74 @@
             <li><a th:href="@{/upload}"><i class="fas fa-user"></i> Админ</a></li>
         </ul>
     </div>
-
-    <div class="catalog-hero">
-        <div class="catalog-hero-content">
-            <h1>Найдите свой идеальный автомобиль</h1>
-            <p>Большой выбор новых и подержанных автомобилей</p>
-        </div>
-    </div>
 </header>
 
-<main class="container">
-    <section class="search-section section-padding">
-        <div class="search-container">
-            <h2 class="section-title">Поиск автомобилей</h2>
-            <form class="search-form">
-                <div class="search-fields">
-                    <div class="search-field">
-                        <label for="car-type"><i class="fas fa-car"></i> Тип</label>
-                        <select id="car-type" name="car-type">
-                            <option value="">Все типы</option>
-                            <option value="new">Новые</option>
-                            <option value="used">Подержанные</option>
-                        </select>
-                    </div>
+<div class="container">
+    <div th:if="${car != null}" class="car-details-container">
+        <div class="car-gallery">
+            <img th:id="mainImage"
+                 th:src="@{'/uploads/' + ${car.file_main_view}}"
+                 th:alt="${car.mark + ' ' + car.model}"
+                 class="main-image">
 
-                    <div class="search-field">
-                        <label for="makes"><i class="fas fa-tag"></i> Марка</label>
-                        <select id="makes" name="makes">
-                            <option value="">Все марки</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="ford">Ford</option>
-                            <option value="bmw">BMW</option>
-                            <option value="audi">Audi</option>
-                            <option value="mercedes">Mercedes</option>
-                        </select>
-                    </div>
+            <div class="thumbnail-grid">
+                <img th:if="${car.file_main_view}"
+                     th:src="@{'/uploads/' + ${car.file_main_view}}"
+                     class="thumbnail active"
+                     onclick="changeImage(this, 'mainImage')">
 
-                    <div class="search-field">
-                        <label for="models"><i class="fas fa-cog"></i> Модель</label>
-                        <select id="models" name="models">
-                            <option value="">Все модели</option>
-                            <option value="camry">Camry</option>
-                            <option value="f-150">F-150</option>
-                            <option value="x5">X5</option>
-                            <option value="a4">A4</option>
-                        </select>
-                    </div>
+                <img th:if="${car.file_back_view}"
+                     th:src="@{'/uploads/' + ${car.file_back_view}}"
+                     class="thumbnail"
+                     onclick="changeImage(this, 'mainImage')">
 
-                    <div class="search-field">
-                        <label for="city"><i class="fas fa-city"></i> Город</label>
-                        <select id="city" name="city">
-                            <option value="">Любой</option>
-                            <option value="msc">Москва</option>
-                            <option value="sch">Сочи</option>
-                            <option value="spb">Питер</option>
-                            <option value="rs">Ростов</option>
-                        </select>
+                <img th:if="${car.file_left_view}"
+                     th:src="@{'/uploads/' + ${car.file_left_view}}"
+                     class="thumbnail"
+                     onclick="changeImage(this, 'mainImage')">
+
+                <img th:if="${car.file_into_view}"
+                     th:src="@{'/uploads/' + ${car.file_into_view}}"
+                     class="thumbnail"
+                     onclick="changeImage(this, 'mainImage')">
+            </div>
+        </div>
+
+        <div>
+            <div class="car-info-card">
+                <div class="price-tag" th:text="'₽' + ${#numbers.formatDecimal(car.price, 0, 'COMMA', 0, 'POINT')}"></div>
+
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fas fa-city"></i> Город</span>
+                        <span class="spec-value" th:text="${car.city}"></span>
                     </div>
-                    <button type="submit" class="search-button">
-                        <i class="fas fa-search"></i>
-                        <span>Найти</span>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fas fa-tag"></i> Марка</span>
+                        <span class="spec-value" th:text="${car.mark}"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fas fa-cog"></i> Модель</span>
+                        <span class="spec-value" th:text="${car.model}"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fas fa-car"></i> Тип</span>
+                        <span class="spec-value" th:text="${car.type}"></span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Позвонить продавцу
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-comment"></i> Написать сообщение
                     </button>
                 </div>
-            </form>
-        </div>
-    </section>
-
-    <div th:if="${cars != null and !cars.empty}">
-        <div class="cars-grid">
-            <a th:each="car : ${cars}" class="car-card" th:href="@{/catalog/{id}(id=${car.id_car})}">
-                <img th:src="@{'/uploads/' + ${car.file_main_view}}"
-                     th:alt="${car.mark} + ' ' + ${car.model}"
-                     class="car-image">
-                <div class="car-info">
-                    <div class="car-header">
-                        <h3 class="car-title" th:text="${car.mark} + ' ' + ${car.model}">Марка и модель</h3>
-                    </div>
-                    <div class="car-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span th:text="${car.city}">Город</span>
-                    </div>
-                    <div class="car-price"
-                         th:text="'₽' + ${#numbers.formatDecimal(car.price, 0, 'COMMA', 0, 'POINT')}"></div>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
-
-    <div th:unless="${cars != null and !cars.empty}" class="empty-state">
-        <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" alt="Нет автомобилей">
-        <h2>Автомобилей пока нет</h2>
-        <p>Будьте первым, кто добавит автомобиль в галерею!</p>
-        <a href="/upload" class="upload-btn">Добавить первый автомобиль</a>
-    </div>
-</main>
+</div>
 
 <footer class="footer">
     <div class="footer-content container">
@@ -214,5 +183,18 @@
         </div>
     </div>
 </footer>
+<script>
+    function changeImage(thumbnail, mainImageId) {
+        const mainImage = document.getElementById(mainImageId);
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+
+        document.querySelectorAll('.thumbnail').forEach(img => {
+            img.classList.remove('active');
+        });
+
+        thumbnail.classList.add('active');
+    }
+</script>
 </body>
 </html>

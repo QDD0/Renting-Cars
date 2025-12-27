@@ -2,6 +2,7 @@ package org.example.rentingcars.dao;
 
 import org.example.rentingcars.source.Car;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +24,9 @@ public class CarDAO {
     }
 
     public List<Car> getMainInfo() {
-        return jdbcTemplate.query("SELECT city, mark, model, price, file_main_view FROM cars", (rs, rowNum) -> {
+        return jdbcTemplate.query("SELECT id_car, city, mark, model, price, file_main_view FROM cars", (rs, rowNum) -> {
             Car car = new Car();
+            car.setId_car(rs.getInt("id_car"));
             car.setCity(rs.getString("city"));
             car.setMark(rs.getString("mark"));
             car.setModel(rs.getString("model"));
@@ -32,5 +34,10 @@ public class CarDAO {
             car.setFile_main_view(rs.getString("file_main_view"));
             return car;
         });
+    }
+
+    public Car showById(int id) {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE id_car = ?",
+                new Object[]{id}, new BeanPropertyRowMapper<>(Car.class)).stream().findAny().orElse(null);
     }
 }
