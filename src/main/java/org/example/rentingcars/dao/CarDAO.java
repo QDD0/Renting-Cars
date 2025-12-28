@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static org.springframework.http.HttpHeaders.FROM;
+
 @Component
 public class CarDAO {
     private final JdbcTemplate jdbcTemplate;
@@ -39,5 +41,37 @@ public class CarDAO {
     public Car showById(int id) {
         return jdbcTemplate.query("SELECT * FROM cars WHERE id_car = ?",
                 new Object[]{id}, new BeanPropertyRowMapper<>(Car.class)).stream().findAny().orElse(null);
+    }
+
+    public List<Car> getAllSportCars() {
+        return jdbcTemplate.query(
+                "SELECT * FROM cars WHERE type = 'Спорт'",
+                new BeanPropertyRowMapper<>(Car.class)
+        );
+    }
+
+    public List<Car> getAllPrimeCars() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Премиум'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getAllLightCars() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Седан'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getAllSuvCars() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Внедорожник'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getElectroSuvCars() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Электро'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getCabrioSuvCars() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Кабриолет'",
+                new BeanPropertyRowMapper<>(Car.class));
     }
 }

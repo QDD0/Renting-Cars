@@ -98,27 +98,27 @@
     <section class="review-cars section-padding">
         <h2 class="section-title">Обзор по категориям</h2>
         <div class="cars-type">
-            <a href="#" class="category-link sport">
+            <a th:href="@{/catalog/sport}" class="category-link sport">
                 <img th:src="@{/img/sport.png}" class="cars-img" alt="Спортивные автомобили"/>
                 <span>Спортивные</span>
             </a>
-            <a href="#" class="category-link lux">
+            <a th:href="@{/catalog/prime}" class="category-link lux">
                 <img th:src="@{/img/lux.png}" class="cars-img" alt="Премиум-класс"/>
                 <span>Премиум-класс</span>
             </a>
-            <a href="#" class="category-link standart">
+            <a th:href="@{/catalog/light}" class="category-link standart">
                 <img th:src="@{/img/standart.png}" class="cars-img" alt="Легковые автомобили"/>
                 <span>Легковые</span>
             </a>
-            <a href="#" class="category-link offroad">
+            <a th:href="@{/catalog/suv}" class="category-link offroad">
                 <img th:src="@{/img/offroad.png}" class="cars-img" alt="Внедорожники"/>
                 <span>Внедорожники</span>
             </a>
-            <a href="#" class="category-link electric">
+            <a th:href="@{catalog/electro}" class="category-link electric">
                 <img th:src="@{/img/electric.png}" class="cars-img" alt="Электромобили"/>
                 <span>Электромобили</span>
             </a>
-            <a href="#" class="category-link cabrio">
+            <a th:href="@{/catalog/cabrio}" class="category-link cabrio">
                 <img th:src="@{/img/cabrio.png}" class="cars-img" alt="Кабриолеты"/>
                 <span>Кабриолеты</span>
             </a>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${car.mark + ' ' + car.model}">CarHut - Детали автомобиля</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" th:href="@{/css/showCar.css}" />
+    <link rel="stylesheet" th:href="@{/css/showCar.css}"/>
     <script th:src="@{/js/scripts.js}" defer></script>
 </head>
 <body>
@@ -41,72 +41,75 @@
     </div>
 </header>
 
-<div class="container">
-    <div th:if="${car != null}" class="car-details-container">
-        <div class="car-gallery">
-            <img th:id="mainImage"
-                 th:src="@{'/uploads/' + ${car.file_main_view}}"
-                 th:alt="${car.mark + ' ' + car.model}"
-                 class="main-image">
-
-            <div class="thumbnail-grid">
-                <img th:if="${car.file_main_view}"
+<main style="margin-top: 5%">
+    <div class="container">
+        <div th:if="${car != null}" class="car-details-container">
+            <div class="car-gallery">
+                <img th:id="mainImage"
                      th:src="@{'/uploads/' + ${car.file_main_view}}"
-                     class="thumbnail active"
-                     onclick="changeImage(this, 'mainImage')">
+                     th:alt="${car.mark + ' ' + car.model}"
+                     class="main-image">
 
-                <img th:if="${car.file_back_view}"
-                     th:src="@{'/uploads/' + ${car.file_back_view}}"
-                     class="thumbnail"
-                     onclick="changeImage(this, 'mainImage')">
+                <div class="thumbnail-grid">
+                    <img th:if="${car.file_main_view}"
+                         th:src="@{'/uploads/' + ${car.file_main_view}}"
+                         class="thumbnail active"
+                         onclick="changeImage(this, 'mainImage')">
 
-                <img th:if="${car.file_left_view}"
-                     th:src="@{'/uploads/' + ${car.file_left_view}}"
-                     class="thumbnail"
-                     onclick="changeImage(this, 'mainImage')">
+                    <img th:if="${car.file_back_view}"
+                         th:src="@{'/uploads/' + ${car.file_back_view}}"
+                         class="thumbnail"
+                         onclick="changeImage(this, 'mainImage')">
 
-                <img th:if="${car.file_into_view}"
-                     th:src="@{'/uploads/' + ${car.file_into_view}}"
-                     class="thumbnail"
-                     onclick="changeImage(this, 'mainImage')">
-            </div>
-        </div>
+                    <img th:if="${car.file_left_view}"
+                         th:src="@{'/uploads/' + ${car.file_left_view}}"
+                         class="thumbnail"
+                         onclick="changeImage(this, 'mainImage')">
 
-        <div>
-            <div class="car-info-card">
-                <div class="price-tag" th:text="'₽' + ${#numbers.formatDecimal(car.price, 0, 'COMMA', 0, 'POINT')}"></div>
-
-                <div class="car-specs">
-                    <div class="spec-item">
-                        <span class="spec-label"><i class="fas fa-city"></i> Город</span>
-                        <span class="spec-value" th:text="${car.city}"></span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label"><i class="fas fa-tag"></i> Марка</span>
-                        <span class="spec-value" th:text="${car.mark}"></span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label"><i class="fas fa-cog"></i> Модель</span>
-                        <span class="spec-value" th:text="${car.model}"></span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label"><i class="fas fa-car"></i> Тип</span>
-                        <span class="spec-value" th:text="${car.type}"></span>
-                    </div>
+                    <img th:if="${car.file_into_view}"
+                         th:src="@{'/uploads/' + ${car.file_into_view}}"
+                         class="thumbnail"
+                         onclick="changeImage(this, 'mainImage')">
                 </div>
+            </div>
 
-                <div class="action-buttons">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-phone-alt"></i> Позвонить продавцу
-                    </button>
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-comment"></i> Написать сообщение
-                    </button>
+            <div>
+                <div class="car-info-card">
+                    <div class="price-tag"
+                         th:text="'₽' + ${#numbers.formatDecimal(car.price, 0, 'COMMA', 0, 'POINT')}"></div>
+
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <span class="spec-label"><i class="fas fa-city"></i> Город</span>
+                            <span class="spec-value" th:text="${car.city}"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label"><i class="fas fa-tag"></i> Марка</span>
+                            <span class="spec-value" th:text="${car.mark}"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label"><i class="fas fa-cog"></i> Модель</span>
+                            <span class="spec-value" th:text="${car.model}"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label"><i class="fas fa-car"></i> Тип</span>
+                            <span class="spec-value" th:text="${car.type}"></span>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-phone-alt"></i> Позвонить продавцу
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-comment"></i> Написать сообщение
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <footer class="footer">
     <div class="footer-content container">

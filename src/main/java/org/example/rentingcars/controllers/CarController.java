@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -116,5 +117,52 @@ public class CarController {
             System.out.println("Автомобиль с id=" + id + " не найден");
             return "redirect:/catalog";
         }
+    }
+
+    @GetMapping("/catalog/sport")
+    public String sportPage(Model model) {
+        List<Car> cars = carDAO.getAllSportCars();  // ← Теперь получаем ВЕСЬ список
+        model.addAttribute("cars", cars);
+        return "types";
+    }
+
+    @GetMapping("/catalog/prime")
+    public String primePage(Model model) {
+        List<Car> cars = carDAO.getAllPrimeCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/light")
+    public String lightPage(Model model) {
+        List<Car> cars = carDAO.getAllLightCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/suv")
+    public String suvPage(Model model) {
+        List<Car> cars = carDAO.getAllSuvCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/electro")
+    public String electroPage(Model model) {
+        List<Car> cars = carDAO.getElectroSuvCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/cabrio")
+    public String cabrioPage(Model model) {
+        List<Car> cars = carDAO.getCabrioSuvCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
     }
 }
