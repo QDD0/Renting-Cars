@@ -152,7 +152,7 @@ public class CarController {
 
     @GetMapping("/catalog/electro")
     public String electroPage(Model model) {
-        List<Car> cars = carDAO.getElectroSuvCars();
+        List<Car> cars = carDAO.getElectroCars();
         model.addAttribute("cars", cars);
 
         return "types";
@@ -160,7 +160,55 @@ public class CarController {
 
     @GetMapping("/catalog/cabrio")
     public String cabrioPage(Model model) {
-        List<Car> cars = carDAO.getCabrioSuvCars();
+        List<Car> cars = carDAO.getCabrioCars();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/cadillac")
+    public String firstSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialOneCar();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/mercedes")
+    public String secondSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialTwoCar();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/bmw")
+    public String thirdSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialThreeCar();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/audi")
+    public String fourthSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialFourCar();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/lixiang")
+    public String fifthSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialFiveCar();
+        model.addAttribute("cars", cars);
+
+        return "types";
+    }
+
+    @GetMapping("/catalog/special/toyota")
+    public String sixthSpecialPage(Model model) {
+        List<Car> cars = carDAO.getSpecialSixCar();
         model.addAttribute("cars", cars);
 
         return "types";

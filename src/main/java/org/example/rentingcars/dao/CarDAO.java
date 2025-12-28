@@ -65,13 +65,43 @@ public class CarDAO {
                 new BeanPropertyRowMapper<>(Car.class));
     }
 
-    public List<Car> getElectroSuvCars() {
+    public List<Car> getElectroCars() {
         return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Электро'",
                 new BeanPropertyRowMapper<>(Car.class));
     }
 
-    public List<Car> getCabrioSuvCars() {
+    public List<Car> getCabrioCars() {
         return jdbcTemplate.query("SELECT * FROM cars WHERE type = 'Кабриолет'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialOneCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'Escalade V'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialTwoCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'AMG GT 43'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialThreeCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'X7 M-SPORT'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialFourCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'A7'",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialFiveCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'l9 '",
+                new BeanPropertyRowMapper<>(Car.class));
+    }
+
+    public List<Car> getSpecialSixCar() {
+        return jdbcTemplate.query("SELECT * FROM cars WHERE model = 'Camry 70'",
                 new BeanPropertyRowMapper<>(Car.class));
     }
 }

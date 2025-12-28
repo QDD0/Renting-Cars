@@ -12,11 +12,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/profile")
-    public String profile() {
-        return "profile";
-    }
-
     @GetMapping("/about")
     public String about() {
         return "about";
