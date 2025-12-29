@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/aboutStyle.css}"/>
 </head>
 <body>
 <header>
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h1>CarHut</h1>
+                <h1 style="color: black">CarHut</h1>
             </div>
 
             <button class="menu-toggle" aria-label="Открыть меню">
@@ -23,7 +24,7 @@
                 <li><a th:href="@{/}"><i class="fas fa-home"></i> Главная</a></li>
                 <li><a th:href="@{/catalog}"><i class="fas fa-car"></i> Каталог</a></li>
                 <li><a th:href="@{/about}"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a th:href="@{/profile}"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a th:href="@{/upload}"><i class="fas fa-user"></i> Админ</a></li>
             </ul>
         </div>
     </nav>
@@ -37,6 +38,224 @@
         </ul>
     </div>
 </header>
+
+<main class="content-wrapper">
+    <section class="info-section">
+        <div class="info-block">
+            <div class="info-img">
+                <img
+                        src="https://prokatcom.ru/wp-content/themes/prokat/images/pic1.jpeg"
+                        alt="Автомобили нашего автопарка"
+                />
+            </div>
+            <div class="info-text">
+                <h2>О нас</h2>
+                <p>
+                    В нашем автопарке представлены модели популярных брендов и классов
+                    – от экономичных Hyundai, Kia и Volkswagen для привычных городских
+                    поездок до премиальных AUDI, BMW и Mercedes-Benz на официальные
+                    мероприятия и бизнес-встречи. Все автомобили регулярно проходят
+                    технический осмотр. Клиентам предлагается выбор между механической
+                    и автоматической коробкой передач, а также различными
+                    комплектациями.
+                </p>
+            </div>
+        </div>
+
+        <div class="info-block reverse">
+            <div class="info-img">
+                <img
+                        src="https://prokatcom.ru/wp-content/themes/prokat/images/pic0.jpg"
+                        alt="Разнообразие автомобилей в нашем автопарке"
+                />
+            </div>
+            <div class="info-text">
+                <h2>Наш автопарк</h2>
+                <p>
+                    В нашем автопарке представлены модели популярных брендов и классов
+                    – от экономичных Hyundai, Kia и Volkswagen для привычных городских
+                    поездок до премиальных AUDI, BMW и Mercedes-Benz на официальные
+                    мероприятия и бизнес-встречи. Все автомобили регулярно проходят
+                    технический осмотр. Клиентам предлагается выбор между механической
+                    и автоматической коробкой передач, а также различными
+                    комплектациями.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="offices-section">
+        <h2 class="section-title">Наши офисы</h2>
+
+        <div class="office-card">
+            <div class="office-info">
+                <p class="office-subtitle">Головной офис</p>
+                <h3 class="office-title">Москва</h3>
+                <div class="office-contacts">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+7 (495) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+7 (903) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>prokat@prokatcom.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span
+                        >Шереметьевское ш., вл. 39 стр.1, Химки, аэропорт Шереметьево,
+                  терминал С</span
+                        >
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <span>Ежедневно с 10:00 до 22:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="office-map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.7535471910696!2d37.55670707718131!3d55.74541099256004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bc6eeccaaf7%3A0x50e6f8ba56122dbd!2z0JHRgNGP0L3RgdC60LDRjyDRg9C7LiwgMzIsINGB0YLRgC42LCDQnNC-0YHQutCy0LAsIDEyMTA1OQ!5e0!3m2!1sru!2sru!4v1767015550375!5m2!1sru!2sru"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Карта расположения головного офиса в Москве"
+                ></iframe>
+            </div>
+        </div>
+
+        <div class="office-card">
+            <div class="office-info">
+                <p class="office-subtitle">Дополнительный офис</p>
+                <h3 class="office-title">Аэропорт Домодедово</h3>
+                <div class="office-contacts">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+7 (495) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+7 (903) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>prokat@prokatcom.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span
+                        >Городской округ Домодедово, аэропорт Домодедово имени М.В.
+                  Ломоносова, 1</span
+                        >
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <span>Ежедневно с 10:00 до 22:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="office-map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5779.434267927728!2d39.72026173244262!3d43.59160790265636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1767016025648!5m2!1sru!2sru"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Карта расположения офиса в аэропорту Домодедово"
+                ></iframe>
+            </div>
+        </div>
+
+        <div class="office-card">
+            <div class="office-info">
+                <p class="office-subtitle">Дополнительный офис</p>
+                <h3 class="office-title">Санкт-Петербург</h3>
+                <div class="office-contacts">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+7 (495) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+7 (903) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>prokat@prokatcom.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Оккервиль Санкт-Петербург</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <span>Ежедневно с 10:00 до 22:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="office-map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7996.764002071565!2d30.47037053831832!3d59.92897276544597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46962e751ec909c9%3A0xd313c51023087123!2z0J7QutC60LXRgNCy0LjQu9GMLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkzMzEy!5e0!3m2!1sru!2sru!4v1767015813347!5m2!1sru!2sru"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
+
+        <div class="office-card">
+            <div class="office-info">
+                <p class="office-subtitle">Дополнительный офис</p>
+                <h3 class="office-title">Сочи</h3>
+                <div class="office-contacts">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+7 (495) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+7 (903) 722-26-66</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>prokat@prokatcom.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Центральный,Сочи, Краснодарский край</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <span>Ежедневно с 10:00 до 22:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="office-map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5779.434267927728!2d39.72026173244262!3d43.59160790265636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1767016025648!5m2!1sru!2sru"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer class="footer">
     <div class="footer-content container">
@@ -52,7 +271,7 @@
         <div class="footer-links">
             <div class="footer-column">
                 <h3>Компания</h3>
-                <a href="about.html">О нас</a>
+                <a th:href="@{/about}">О нас</a>
                 <a href="blog.html">Блог</a>
                 <a href="services.html">Услуги</a>
                 <a href="faq.html">FAQ</a>
